@@ -8,6 +8,10 @@ const initialValues = {
   channel: "",
   comments: "",
   address: "",
+  social: {
+    facebook: "",
+    twitter: "",
+  },
 };
 
 // const onSubmit = (values) => {
@@ -44,13 +48,6 @@ const validationSchema = Yup.object({
 });
 
 function YoutubeForm() {
-  // const formik = useFormik({
-  //   initialValues,
-  //   onSubmit,
-  //   // validate,
-  //   validationSchema,
-  // });
-
   // console.log("form values", formik.touched);
 
   return (
@@ -64,24 +61,24 @@ function YoutubeForm() {
           <label htmlFor="name">Name</label>
           <Field type="text" id="name" name="name" />
 
-          <ErrorMessage name="name" component="div" />
+          <ErrorMessage className="error" name="name" component="div" />
         </div>
 
         <div className="form-control">
           <label htmlFor="email">E-mail</label>
           <Field type="email" id="id" name="email" />
-          <ErrorMessage name="email" component="div" />
+          <ErrorMessage className="error" name="email" component="div" />
         </div>
 
         <div className="form-control">
           <label htmlFor="channel">Channel</label>
           <Field type="text" id="channel" name="channel" />
-          <ErrorMessage name="channel" component="div" />
+          <ErrorMessage className="error" name="channel" component="div" />
         </div>
         <div className="form-control">
           <label htmlFor="comments">Comments</label>
           <Field as="textarea" id="comments" name="comments" />
-          <ErrorMessage name="comments" />
+          <ErrorMessage className="error" component="div" name="comments" />
         </div>
 
         <div className="form-control">
@@ -98,6 +95,16 @@ function YoutubeForm() {
               );
             }}
           </Field>
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="facebook">Facebook profile</label>
+          <Field type="text" id="facebook" name="social.facebook" />
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="twitter">Twitter profile</label>
+          <Field type="text" id="twitter" name="social.twitter" />
         </div>
 
         <button type="submit">Submit</button>
