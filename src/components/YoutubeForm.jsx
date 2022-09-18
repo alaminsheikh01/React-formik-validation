@@ -11,7 +11,7 @@ const onSubmit = values =>{
     console.log('Form data', values);
 }
 
-const validate = values=>{
+const validate = values =>{
     // values.name values.email values.channel
     // errors.name errors.email errors.channel
     let errors ={}
@@ -41,7 +41,7 @@ function YoutubeForm(){
         onSubmit,
         validate
     })
-    // console.log("form values", formik.values);
+    console.log("form values", formik.errors);
 
     return (
         <div>
